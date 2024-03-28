@@ -5,5 +5,140 @@
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26169347"
 	},
-	"item": []
+	"item": [
+		{
+			"name": "/plants - all plants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/plants",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/plants/{id} - one plant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/plants/146dc2dd-0219-4e30-b816-f70907cfc9ff",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"plants",
+						"146dc2dd-0219-4e30-b816-f70907cfc9ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/plants/{id} - remove one plant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/plants/146dc2dd-0219-4e30-b816-f70907cfc9ff",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"plants",
+						"146dc2dd-0219-4e30-b816-f70907cfc9ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/plants - add one plant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Campanule\",\r\n    \"sunlight\": \"moyen\",\r\n    \"watering\": 3,\r\n    \"category\": \"plantes fleuries\",\r\n    \"imagePath\": \"https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0077000/77390_010.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/plants",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/plants/{id} - update one plant",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"146dc2dd-0219-4e30-b816-f70907cfc9ff\",\r\n    \"name\": \"Pothos\",\r\n    \"sunlight\": \"moyen\",\r\n    \"watering\": 1,\r\n    \"category\": \"plantes fleuries\",\r\n    \"imagePath\": \"https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0077000/77390_010.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/plants/146dc2dd-0219-4e30-b816-f70907cfc9ff",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"plants",
+						"146dc2dd-0219-4e30-b816-f70907cfc9ff"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "localhost:3000/api/V1"
+		}
+	]
 }
