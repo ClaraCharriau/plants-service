@@ -1,8 +1,20 @@
+import { IsNumber, IsString } from 'class-validator';
+
 export class PlantDto {
-    id: string;
-    name: string;
-    sunlight: string;
-    watering: number;
-    category: string;
-    imagePath: string;
+  id: string;
+
+  @IsString()
+  name: string;
+
+  @IsString()
+  sunlight: string;
+
+  @IsNumber()
+  watering: number;
+
+  @IsString()
+  category: string;
+
+  @IsString()
+  imagePath: string;
 }

@@ -9,13 +9,14 @@ import {
   } from '@nestjs/common';
 import { PlantsService } from './plants.service';
 import { PlantDto } from './dto/plant.dto';
+import { ValidationPipe } from 'src/validation/validation.pipe';
 
 @Controller('plants')
 export class PlantsController {
   constructor(private readonly plantsService: PlantsService) {}
 
   @Post()
-  create(@Body() createPlantDto: PlantDto) {
+  create(@Body(new ValidationPipe()) createPlantDto: PlantDto) {
     return this.plantsService.create(createPlantDto);
   }
 
