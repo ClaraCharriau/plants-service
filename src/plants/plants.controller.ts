@@ -9,16 +9,15 @@ import {
 } from '@nestjs/common';
 import { PlantsService } from './plants.service';
 import { CreatePlantDto } from './dto/create-plant.dto';
-import { UpdatePlantDto } from './dto/update-plant.dto';
 
 @Controller('plants')
 export class PlantsController {
   constructor(private readonly plantsService: PlantsService) {}
 
-  // @Post()
-  // create(@Body() createPlantDto: CreatePlantDto) {
-  //   return this.plantsService.create(createPlantDto);
-  // }
+  @Post()
+  create(@Body() createPlantDto: CreatePlantDto) {
+    return this.plantsService.create(createPlantDto);
+  }
 
   @Get()
   findAll() {
