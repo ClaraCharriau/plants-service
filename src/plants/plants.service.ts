@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Plant } from './entities/plant.entity';
-import { CreatePlantDto } from './dto/create-plant.dto';
+import { PlantDto } from './dto/plant.dto';
 
 @Injectable()
 export class PlantsService {
@@ -23,11 +23,11 @@ export class PlantsService {
     await this.plantsRepository.delete(id);
   }
 
-  create(createPlantDto: CreatePlantDto) {
+  create(createPlantDto: PlantDto): void {
     this.plantsRepository.save(createPlantDto);
   }
 
-  // update(id: number, updatePlantDto: UpdatePlantDto) {
-  //   return `This action updates a #${id} plant`;
-  // }
+  update(id: string, updatePlantDto: PlantDto): void {
+    this.plantsRepository.update(id, updatePlantDto);
+  }
 }

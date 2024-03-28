@@ -1,4 +1,4 @@
-export class CreatePlantDto {
+export class PlantDto {
     id: string;
     name: string;
     sunlight: string;

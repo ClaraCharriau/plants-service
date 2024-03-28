@@ -8,14 +8,14 @@ import {
   Delete,
 } from '@nestjs/common';
 import { PlantsService } from './plants.service';
-import { CreatePlantDto } from './dto/create-plant.dto';
+import { PlantDto } from './dto/plant.dto';
 
 @Controller('plants')
 export class PlantsController {
   constructor(private readonly plantsService: PlantsService) {}
 
   @Post()
-  create(@Body() createPlantDto: CreatePlantDto) {
+  create(@Body() createPlantDto: PlantDto) {
     return this.plantsService.create(createPlantDto);
   }
 
@@ -29,10 +29,10 @@ export class PlantsController {
     return this.plantsService.findOne(id);
   }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updatePlantDto: UpdatePlantDto) {
-  //   return this.plantsService.update(id, updatePlantDto);
-  // }
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updatePlantDto: PlantDto) {
+    return this.plantsService.update(id, updatePlantDto);
+  }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
