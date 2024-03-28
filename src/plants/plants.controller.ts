@@ -6,7 +6,7 @@ import {
   Patch,
   Param,
   Delete,
-} from '@nestjs/common';
+  } from '@nestjs/common';
 import { PlantsService } from './plants.service';
 import { PlantDto } from './dto/plant.dto';
 
